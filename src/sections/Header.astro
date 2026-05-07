@@ -15,7 +15,7 @@ const { data } = Astro.props;
 >
   <nav aria-label="Main Navigation" class="flex flex-row items-center w-3/4">
     <div class="text-nowrap">
-      <Action as="a" class="text-xl" href="#">{data.logo}</Action>
+      <Action as="a" class="text-xl font-semibold" href="/">{data.logo}</Action>
     </div>
     <ul class="flex flex-row w-full justify-center gap-x-14">
       {
@@ -41,12 +41,12 @@ const { data } = Astro.props;
       navbar.classList.remove("border-b-transparent");
       navbar.classList.remove("bg-transparent");
       navbar.classList.add("border-b");
-      navbar.classList.add("border-b-slate-300");
-      navbar.classList.add("bg-white");
+      navbar.classList.add("border-b-primary");
+      navbar.classList.add("bg-white/90");
     } else {
       navbar.classList.remove("border-b");
-      navbar.classList.remove("border-b-slate-300");
-      navbar.classList.remove("bg-white");
+      navbar.classList.remove("border-b-primary");
+      navbar.classList.remove("bg-white/90");
       navbar.classList.add("border-b-transparent");
       navbar.classList.add("bg-transparent");
     }

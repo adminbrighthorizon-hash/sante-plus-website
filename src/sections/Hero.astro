@@ -14,31 +14,33 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<section id="hero-section" class="flex justify-center mt-48 h-screen">
-  <div class="md:w-1/2">
-    <h1 class="text-4xl text-center font-semibold md:text-6xl">
+<section id="hero-section" class="flex justify-center mt-44 min-h-screen">
+  <div class="md:w-2/3 rounded-3xl border border-primary/70 bg-white/80 backdrop-blur-sm px-6 py-10 md:px-12">
+    <p class="mx-auto mb-6 w-fit rounded-full border border-secondary bg-primary/60 px-4 py-2 text-sm font-medium">
+      Bien-être naturel de confiance
+    </p>
+    <h1 class="text-4xl text-center font-semibold md:text-6xl leading-tight">
       {data.title}
-      <span class="text-primary"> {data.highlightedTitle} </span>
+      <span class="text-secondary"> {data.highlightedTitle} </span>
     </h1>
-    <h2 class="mt-10 text-lg text-center opacity-80 md:text-2xl">
+    <h2 class="mt-8 text-lg text-center opacity-80 md:text-2xl">
       {data.subTitle}
     </h2>
-    <div class="flex justify-evenly mt-10">
+    <div class="flex flex-col md:flex-row gap-4 justify-center mt-10">
       <Action
         as="a"
         type="button"
-        class="bg-black text-white"
-        href="https://github.com/JimmyCamus/luna-landing"
+        class="bg-secondary text-white shadow-lg shadow-secondary/40"
+        href="https://wa.me/243997007071"
         target="_blank"
       >
         {data.primaryCta}
       </Action>
       <Action
         as="a"
-        class="bg-transparent text-black border border-black"
+        class="bg-white text-black border border-secondary"
         type="button"
-        href="https://github.com/JimmyCamus/luna-landing"
-        target="_blank"
+        href="#services-section"
       >
         {data.secondaryCta}
       </Action>
@@ -46,7 +48,7 @@ const { data } = Astro.props;
     <div class="flex justify-center">
       <Action
         as="a"
-        class="flex justify-center items-center animate-bounce border-2 border-transparent bg-primary text-white rounded-full w-14 h-14 mt-32 hover:bg-white hover:text-primary hover:border-primary transition"
+        class="flex justify-center items-center animate-bounce border-2 border-secondary bg-primary text-black rounded-full w-14 h-14 mt-16 hover:bg-white hover:text-black hover:border-secondary transition"
         href="#services-section"
         title="arrow down icon"
       >

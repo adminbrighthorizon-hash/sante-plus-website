@@ -18,10 +18,10 @@ const { data } = Astro.props;
   <SectionTitle>
     {data.title}
   </SectionTitle>
-  <div class="grid md:grid-cols-2 gap-y-10 justify-items-center">
+  <div class="grid md:grid-cols-2 gap-8 justify-items-center">
     {
       data.services.map((service) => (
-        <article class="flex gap-x-6 md:gap-x-12 md:w-[550px]">
+        <article class="flex gap-x-6 md:gap-x-8 md:w-[550px] rounded-2xl border border-primary/50 bg-white/70 p-6 shadow-sm hover:shadow-xl hover:shadow-secondary/20 transition">
           <div>
             <IconWrapper>
               <Icon icon={service.icon as IconType} />
