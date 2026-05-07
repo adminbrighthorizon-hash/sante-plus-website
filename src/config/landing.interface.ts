@@ -123,6 +123,7 @@ export type Icon =
   | "ConfigIcon"
   | "CheckIcon"
   | "InstagramIcon"
+  | "WhatsAppIcon"
   | "GithubIcon"
   | "TwitterIcon"
   | "FacebookIcon"
