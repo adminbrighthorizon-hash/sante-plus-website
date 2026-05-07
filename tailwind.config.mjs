@@ -6,8 +6,8 @@ export default {
       colors: {
         white: "#FFFFFF",
         black: "#1E293B",
-        primary: "#CFFCE8",
-        secondary: "#FF8FC8",
+        primary: "#4DAA72",
+        secondary: "#F472B6",
       },
     },
   },

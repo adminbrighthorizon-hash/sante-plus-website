@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Sante Plus | Natural Wellness With Soursop Leaves",
-    "description": "Sante Plus helps you build a healthier routine with practical guidance on soursop leaves and natural wellness.",
+    "title": "Santé Plus | Wellness Across Congo & South Africa",
+    "description": "Santé Plus delivers natural wellness guidance with local support in Lubumbashi, Kolwezi, Kinshasa, and Johannesburg.",
     "lang": "en",
     "charset": "UTF-8",
     "ldJson": {
       "@context": "http://schema.org",
       "@type": "Organization",
-      "name": "Sante Plus",
-      "description": "Sante Plus highlights trusted natural wellness guidance around soursop leaves.",
+      "name": "Santé Plus",
+      "description": "Santé Plus highlights trusted natural wellness guidance around soursop leaves across DR Congo and South Africa.",
       "url": "https://www.instagram.com/santeplus",
       "logo": "./public/favicon.svg",
       "contactPoint": {
@@ -23,7 +23,7 @@
     }
   },
   "headerData": {
-    "logo": "Sante Plus",
+    "logo": "Santé Plus",
     "links": [
       { "label": "Home", "href": "/" },
       { "label": "Benefits", "href": "/bienfaits" },
@@ -32,10 +32,10 @@
   },
   "heroData": {
     "title": "Feel Better Naturally with",
-    "subTitle": "Discover the wellness value of soursop leaves through clear guidance and everyday routines that fit your lifestyle.",
+    "subTitle": "From Lubumbashi to Johannesburg, discover wellness routines built around soursop leaves, community care, and practical everyday habits.",
     "primaryCta": "Chat on WhatsApp",
     "secondaryCta": "See Benefits",
-    "highlightedTitle": "Sante Plus"
+    "highlightedTitle": "Santé Plus"
   },
   "servicesData": {
     "title": "Why People Choose Soursop Leaves",
@@ -82,7 +82,7 @@
     ]
   },
   "brandsData": {
-    "title": "Connect With Sante Plus",
+    "title": "Connect With Santé Plus",
     "description": "Follow our wellness updates, preparation tips, and official announcements online.",
     "brands": [
       {
@@ -144,8 +144,8 @@
     ]
   },
   "footerData": {
-    "logo": "Sante Plus",
-    "description": "Nature is my medicine. Reach out for practical and responsible natural wellness guidance.",
+    "logo": "Santé Plus",
+    "description": "Nature is my medicine. Serving Lubumbashi, Kolwezi, Kinshasa, and Johannesburg with practical and responsible wellness guidance.",
     "links": [
       { "label": "Home", "href": "/" },
       { "label": "Benefits", "href": "/bienfaits" },
