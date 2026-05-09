@@ -78,10 +78,7 @@ const logoImagePath = `${baseUrl}images/logo.jpeg`;
           "rounded-full px-3 py-1 text-sm font-semibold transition inline-flex items-center gap-1",
           !isFr ? "bg-secondary text-white" : "hover:bg-primary/20",
         ]}
-      >
-        <span>EN</span>
-        <span aria-hidden="true">🇬🇧</span>
-      </a>
+      >EN <span aria-hidden="true">🇬🇧</span></a>
       <a
         href={withBase(isFr ? appPath : translatedPath)}
         aria-label={labels[lang].switchToFr}
@@ -89,10 +86,7 @@ const logoImagePath = `${baseUrl}images/logo.jpeg`;
           "rounded-full px-3 py-1 text-sm font-semibold transition inline-flex items-center gap-1",
           isFr ? "bg-secondary text-white" : "hover:bg-primary/20",
         ]}
-      >
-        <span>FR</span>
-        <span aria-hidden="true">🇫🇷</span>
-      </a>
+      >FR <span aria-hidden="true">🇫🇷</span></a>
     </div>
   </nav>
 </header>
@@ -113,10 +107,7 @@ const logoImagePath = `${baseUrl}images/logo.jpeg`;
         "rounded-full px-2.5 py-1 text-xs font-semibold transition inline-flex items-center gap-1",
         !isFr ? "bg-secondary text-white" : "bg-primary/20 text-black",
       ]}
-    >
-      <span>EN</span>
-      <span aria-hidden="true">🇬🇧</span>
-    </a>
+    >EN <span aria-hidden="true">🇬🇧</span></a>
     <a
       href={withBase(isFr ? appPath : translatedPath)}
       aria-label={labels[lang].switchToFr}
@@ -124,10 +115,7 @@ const logoImagePath = `${baseUrl}images/logo.jpeg`;
         "rounded-full px-2.5 py-1 text-xs font-semibold transition inline-flex items-center gap-1",
         isFr ? "bg-secondary text-white" : "bg-primary/20 text-black",
       ]}
-    >
-      <span>FR</span>
-      <span aria-hidden="true">🇫🇷</span>
-    </a>
+    >FR <span aria-hidden="true">🇫🇷</span></a>
     <button
       id="mobile-menu-toggle"
       type="button"
