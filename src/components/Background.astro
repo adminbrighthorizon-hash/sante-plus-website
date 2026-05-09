@@ -1,8 +1,11 @@
 <div class="pointer-events-none fixed inset-0 z-[-2] overflow-hidden bg-white">
+  <div class="absolute inset-0 opacity-20 bg-cover bg-center animated-bg-image" style="background-image: url('/images/soursop-tree.jpg');"></div>
+  <div class="absolute inset-0 opacity-15 bg-cover bg-center animated-bg-image-reverse" style="background-image: url('/images/shopping.webp'); mix-blend-mode: multiply;"></div>
   <div class="absolute inset-0 bg-[radial-gradient(90%_55%_at_50%_0%,rgba(167,243,208,0.45)_0,rgba(249,168,212,0.18)_52%,rgba(255,255,255,0)_100%)]"></div>
   <div class="aurora orb-one"></div>
   <div class="aurora orb-two"></div>
   <div class="aurora orb-three"></div>
+  <div class="sparkles"></div>
   <div class="grid-fade"></div>
 </div>
 
@@ -53,6 +56,25 @@
     opacity: 0.35;
   }
 
+  .sparkles {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.65) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.15;
+    animation: sparkle 10s linear infinite;
+  }
+
+  .animated-bg-image {
+    animation: bg-pan 40s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  .animated-bg-image-reverse {
+    animation: bg-pan-reverse 44s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
   @keyframes float {
     0%,
     100% {
@@ -60,6 +82,33 @@
     }
     50% {
       transform: translate3d(24px, -18px, 0) scale(1.08);
+    }
+  }
+
+  @keyframes bg-pan {
+    0% {
+      transform: scale(1.05) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: scale(1.15) translate3d(-2%, -1.5%, 0);
+    }
+  }
+
+  @keyframes bg-pan-reverse {
+    0% {
+      transform: scale(1.08) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: scale(1.16) translate3d(2%, 1.5%, 0);
+    }
+  }
+
+  @keyframes sparkle {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-24px);
     }
   }
 </style>
