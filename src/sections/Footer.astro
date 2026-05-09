@@ -36,6 +36,7 @@ const withBase = (path: string) =>
   id="contact-section"
   class="w-full border-t border-primary/60 bg-gradient-to-r from-primary via-white to-secondary px-4 py-10 text-black"
 >
+<<<<<<< HEAD
   <div class="mx-auto flex w-full max-w-5xl flex-col items-center gap-y-7 rounded-3xl border border-primary/30 bg-white/85 px-6 py-8 text-center shadow-xl shadow-secondary/15 backdrop-blur-sm">
     <section>
       <Action as="a" type="text" class="text-2xl font-semibold md:text-3xl" href={withBase(lang === "fr" ? "/fr/" : "/")}>
@@ -79,4 +80,42 @@ const withBase = (path: string) =>
       }
     </section>
   </div>
+=======
+  <section>
+    <Action as="a" type="text" class="text-xl md:text-2xl" href={withBase(lang === "fr" ? "/fr/" : "/")}>
+      {data.logo}
+    </Action>
+  </section>
+  <section>
+    <p class="md:text-lg">
+      {footerDescription}
+    </p>
+  </section>
+  <section
+    class="flex flex-row flex-wrap justify-center gap-x-3 px-4 md:px-0 md:text-xl"
+  >
+    {
+      linksByLang[lang].map((link) => (
+        <Action as="a" type="text" href={withBase(link.href)}>
+          {link.label}
+        </Action>
+      ))
+    }
+  </section>
+  <section class="mb-5 flex flex-row flex-wrap justify-center gap-x-3">
+    {
+      data.socials.map((social) => (
+        <Action
+          as="a"
+          type="icon"
+          class="text-black hover:text-secondary"
+          href={social.href}
+          title={social.icon}
+        >
+          <Icon icon={social.icon as IconType} />
+        </Action>
+      ))
+    }
+  </section>
+>>>>>>> publish/dev-sync
 </footer>
