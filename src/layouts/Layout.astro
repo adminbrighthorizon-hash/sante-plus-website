@@ -37,9 +37,21 @@ const ldJson = JSON.stringify(meta.ldJson);
       aria-label="Chat on WhatsApp"
       title="Chat on WhatsApp"
     >
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M20.52 3.48A11.84 11.84 0 0 0 12.06 0C5.55 0 .25 5.3.25 11.81c0 2.08.55 4.12 1.6 5.93L0 24l6.45-1.7a11.78 11.78 0 0 0 5.61 1.43h.01c6.51 0 11.81-5.3 11.81-11.81 0-3.15-1.23-6.11-3.36-8.44zM12.07 21.7h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.22-3.83 1 1.02-3.73-.24-.38a9.73 9.73 0 0 1-1.5-5.18c0-5.41 4.4-9.81 9.81-9.81 2.62 0 5.08 1.02 6.93 2.87a9.74 9.74 0 0 1 2.88 6.94c0 5.41-4.4 9.81-9.81 9.81z"></path>
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path
+          d="M16.03 3.2C9 3.2 3.3 8.83 3.3 15.78c0 2.26.6 4.46 1.73 6.4L3.2 28.8l6.77-1.78a12.9 12.9 0 0 0 6.04 1.52h.02c7.03 0 12.73-5.64 12.73-12.6 0-3.36-1.32-6.52-3.6-8.95A12.8 12.8 0 0 0 16.03 3.2Z"
+          fill="white"
+        />
+        <path
+          d="M16.01 5.37c-5.82 0-10.55 4.68-10.55 10.44 0 2.03.6 4.02 1.72 5.72l.27.4-1.1 4.01 4.13-1.08.39.23a10.67 10.67 0 0 0 5.13 1.4h.01c5.82 0 10.55-4.68 10.55-10.44 0-2.78-1.09-5.4-3.04-7.36a10.6 10.6 0 0 0-7.5-3.32Z"
+          fill="#25D366"
+        />
+        <path
+          d="m21.98 18.69-.08-.12c-.28-.4-.98-.64-1.53-.37l-.93.47c-.25.12-.54.09-.75-.08l-.36-.28a8.16 8.16 0 0 1-1.97-2.17l-.07-.12c-.14-.24-.15-.54-.01-.78l.47-.88c.28-.52.04-1.18-.39-1.45l-.13-.08-.85-.5a1.19 1.19 0 0 0-1.64.45l-.45.76c-.94 1.6-.36 3.64.9 5.12l.33.39a11.95 11.95 0 0 0 3.42 2.69c1.57.8 3.58 1.08 5.21.12l.78-.46c.57-.34.74-1.07.4-1.62l-.52-.84Z"
+          fill="white"
+        />
       </svg>
+      <span>WhatsApp</span>
     </a>
   </body>
 </html>
@@ -82,13 +94,13 @@ const ldJson = JSON.stringify(meta.ldJson);
     right: 1rem;
     bottom: 1rem;
     z-index: 60;
-    width: 3.4rem;
-    height: 3.4rem;
+    padding: 0.5rem 0.85rem 0.5rem 0.45rem;
     border-radius: 9999px;
     background: linear-gradient(135deg, #25d366, #128c7e);
     color: #fff;
     display: inline-flex;
     align-items: center;
+    gap: 0.4rem;
     justify-content: center;
     box-shadow: 0 10px 24px rgba(18, 140, 126, 0.45);
     animation: pulse-whatsapp 2.2s ease-in-out infinite;
@@ -100,8 +112,15 @@ const ldJson = JSON.stringify(meta.ldJson);
   }
 
   .whatsapp-float svg {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.9rem;
+    height: 1.9rem;
+    flex: 0 0 auto;
+  }
+
+  .whatsapp-float span {
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1;
   }
 
   @keyframes pulse-whatsapp {
