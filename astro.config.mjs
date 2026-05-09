@@ -3,9 +3,13 @@ import { defineConfig } from "astro/config";
 
 import robotsTxt from "astro-robots-txt";
 
+const deployTarget = process.env.DEPLOY_TARGET;
+const [repoOwner, repoName] = (process.env.GITHUB_REPOSITORY || "/").split("/");
+const isGitHubPagesDeploy = deployTarget === "github-pages" && !!repoOwner && !!repoName;
+
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.PUBLIC_SITE_URL ?? "http://localhost:4321",
-  base: process.env.PUBLIC_BASE_PATH ?? "/",
+  site: isGitHubPagesDeploy ? `https://${repoOwner}.github.io` : "http://localhost:4321",
+  base: isGitHubPagesDeploy ? `/${repoName}/` : "/",
   integrations: [tailwind(), robotsTxt()],
 });

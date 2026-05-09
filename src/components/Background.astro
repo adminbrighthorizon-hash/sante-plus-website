@@ -1,6 +1,10 @@
+---
+const baseUrl = import.meta.env.BASE_URL;
+---
+
 <div class="pointer-events-none fixed inset-0 z-[-2] overflow-hidden bg-white">
-  <div class="absolute inset-0 opacity-30 bg-cover bg-center animated-bg-image" style="background-image: url('/images/soursop-tree.jpg');"></div>
-  <div class="absolute inset-0 opacity-22 bg-cover bg-center animated-bg-image-reverse" style="background-image: url('/images/shopping.webp'); mix-blend-mode: multiply;"></div>
+  <div class="absolute inset-0 opacity-30 bg-cover bg-center animated-bg-image" style={`background-image: url('${baseUrl}images/soursop-tree.jpg');`}></div>
+  <div class="absolute inset-0 opacity-22 bg-cover bg-center animated-bg-image-reverse" style={`background-image: url('${baseUrl}images/shopping.webp'); mix-blend-mode: multiply;`}></div>
   <div class="mesh-glow"></div>
   <div class="absolute inset-0 bg-[radial-gradient(90%_55%_at_50%_0%,rgba(167,243,208,0.45)_0,rgba(249,168,212,0.18)_52%,rgba(255,255,255,0)_100%)]"></div>
   <div class="aurora orb-one"></div>
