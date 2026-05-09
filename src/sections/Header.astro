@@ -4,22 +4,52 @@ import type { HeaderData } from "@/config/landing.interface";
 
 interface Props {
   data: HeaderData;
+  lang?: "en" | "fr";
 }
 
-const { data } = Astro.props;
+const { data, lang = "en" } = Astro.props;
+
+const navByLang = {
+  en: [
+    { label: "Home", href: "/" },
+    { label: "Benefits", href: "/bienfaits" },
+    { label: "Contact", href: "/contact" },
+  ],
+  fr: [
+    { label: "Accueil", href: "/fr/" },
+    { label: "Bienfaits", href: "/fr/bienfaits" },
+    { label: "Contact", href: "/fr/contact" },
+  ],
+} as const;
+
+const labels = {
+  en: { nav: "Main Navigation", switchToEn: "Switch to English", switchToFr: "Switch to French" },
+  fr: { nav: "Navigation principale", switchToEn: "Passer en anglais", switchToFr: "Passer en français" },
+} as const;
+
+const currentNav = navByLang[lang];
+const isFr = lang === "fr";
+const pathname = Astro.url.pathname;
+const normalizedPath = pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
+const translatedPath =
+  lang === "fr"
+    ? normalizedPath.replace(/^\/fr/, "") || "/"
+    : normalizedPath === "/"
+      ? "/fr"
+      : `/fr${normalizedPath}`;
 ---
 
 <header
   id="navbar"
   class="w-full transition duration-300 justify-center fixed h-20 z-50 hidden md:flex"
 >
-  <nav aria-label="Main Navigation" class="flex flex-row items-center w-3/4">
+  <nav aria-label={labels[lang].nav} class="flex flex-row items-center w-3/4">
     <div class="text-nowrap">
-      <Action as="a" class="text-xl font-semibold" href="/">{data.logo}</Action>
+      <Action as="a" class="text-xl font-semibold" href={isFr ? "/fr/" : "/"}>{data.logo}</Action>
     </div>
     <ul class="flex flex-row w-full justify-center gap-x-14">
       {
-        data.links.map((item) => (
+        currentNav.map((item) => (
           <li class="text-lg hover:scale-110 hover:opacity-80">
             <Action as="a" href={item.href}>
               {item.label}
@@ -28,7 +58,28 @@ const { data } = Astro.props;
         ))
       }
     </ul>
-    <span></span>
+    <div class="flex items-center gap-2 rounded-full border border-primary/40 bg-white/90 p-1">
+      <a
+        href={isFr ? translatedPath : normalizedPath}
+        aria-label={labels[lang].switchToEn}
+        class:list={[
+          "rounded-full px-3 py-1 text-sm font-semibold transition",
+          !isFr ? "bg-secondary text-white" : "hover:bg-primary/20",
+        ]}
+      >
+        EN
+      </a>
+      <a
+        href={isFr ? normalizedPath : translatedPath}
+        aria-label={labels[lang].switchToFr}
+        class:list={[
+          "rounded-full px-3 py-1 text-sm font-semibold transition",
+          isFr ? "bg-secondary text-white" : "hover:bg-primary/20",
+        ]}
+      >
+        FR
+      </a>
+    </div>
   </nav>
 </header>
 

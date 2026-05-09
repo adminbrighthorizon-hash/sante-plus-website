@@ -8,7 +8,7 @@ const data = await getLandingData();
 ---
 
 <Layout meta={data.meta}>
-  <Header data={data.headerData} />
+  <Header data={data.headerData} lang="en" />
   <main class="flex flex-col items-center pt-36 pb-16">
     <section class="w-11/12 md:w-3/4 rounded-3xl border-2 border-secondary/60 bg-gradient-to-br from-white via-primary/10 to-secondary/10 backdrop-blur-sm p-8 md:p-12 shadow-xl shadow-secondary/20">
       <p class="w-fit mx-auto mb-4 rounded-full bg-secondary/15 border border-secondary px-4 py-2 text-sm font-semibold">
@@ -31,7 +31,7 @@ const data = await getLandingData();
         <img
           src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80"
           alt="Fresh green medicinal plants"
-          class="rounded-xl h-64 w-full object-cover"
+          class="rounded-xl h-64 w-full object-cover animated-photo"
         />
         <h2 class="text-2xl font-semibold mt-5">Daily Immune Support</h2>
         <p class="mt-3 opacity-90">
@@ -44,7 +44,7 @@ const data = await getLandingData();
         <img
           src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80"
           alt="Soursop leaves close-up"
-          class="rounded-xl h-64 w-full object-cover"
+          class="rounded-xl h-64 w-full object-cover animated-photo"
         />
         <h2 class="text-2xl font-semibold mt-5">Responsible Wellness Routine</h2>
         <p class="mt-3 opacity-90">
@@ -72,6 +72,21 @@ const data = await getLandingData();
         natural support with healthy nutrition and professional advice.
       </p>
     </section>
+
+    <section class="w-11/12 md:w-3/4 mt-10 grid md:grid-cols-3 gap-5">
+      <article class="rounded-2xl border border-primary bg-white p-6 shadow-md">
+        <h4 class="text-xl font-semibold">Glow Routine</h4>
+        <p class="mt-3 opacity-90">Pair infusion with hydration and light movement to keep your energy feminine and steady.</p>
+      </article>
+      <article class="rounded-2xl border border-primary bg-white p-6 shadow-md">
+        <h4 class="text-xl font-semibold">Mindful Rhythm</h4>
+        <p class="mt-3 opacity-90">Short pauses, deep breathing, and regular sleep help your routine work better over time.</p>
+      </article>
+      <article class="rounded-2xl border border-primary bg-white p-6 shadow-md">
+        <h4 class="text-xl font-semibold">Sustainable Habits</h4>
+        <p class="mt-3 opacity-90">Small daily actions plus consistent support create long-term wellness results.</p>
+      </article>
+    </section>
   </main>
-  <Footer data={data.footerData} />
+  <Footer data={data.footerData} lang="en" />
 </Layout>

@@ -1,0 +1,127 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Footer from "@/sections/Footer.astro";
+import Header from "@/sections/Header.astro";
+import { getLandingData } from "@/services/data.service";
+
+const data = await getLandingData();
+---
+
+<Layout meta={{ ...data.meta, lang: "fr", title: "Sante Plus | Bien-etre naturel en RDC et Afrique du Sud", description: "Sante Plus propose un accompagnement bien-etre naturel a Lubumbashi, Kolwezi, Kinshasa et Johannesburg." }}>
+  <Header data={data.headerData} lang="fr" />
+  <main class="flex flex-col items-center">
+    <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-28">
+      <div class="absolute inset-0">
+        <img src="/images/soursop-tree.jpg" alt="Ingredients bien-etre naturels" class="w-full h-full object-cover animated-photo-slow" />
+        <div class="absolute inset-0 bg-gradient-to-br from-white/90 via-primary/70 to-secondary/45"></div>
+      </div>
+      <div class="relative z-10 w-11/12 md:w-3/4 rounded-3xl border-2 border-primary/80 bg-white/90 p-8 md:p-12 shadow-2xl shadow-secondary/30">
+        <p class="w-fit mx-auto mb-5 rounded-full border border-secondary bg-primary/70 px-4 py-2 text-sm font-semibold">
+          Bien-etre elegant pour la femme moderne
+        </p>
+        <h1 class="text-4xl md:text-6xl text-center font-semibold leading-tight">
+          Retrouvez votre energie avec <span class="text-secondary drop-shadow-sm">Sante Plus</span>
+        </h1>
+        <p class="mt-6 text-center md:text-xl opacity-90">
+          Une plateforme bien-etre ancree en RDC et en Afrique du Sud, avec des routines pratiques autour des feuilles de corossol.
+        </p>
+        <p class="mt-3 text-center text-base md:text-lg font-medium text-black/80">
+          Lubumbashi • Kolwezi • Kinshasa • Johannesburg
+        </p>
+        <div class="mt-8 flex flex-col md:flex-row gap-4 justify-center">
+          <a href="https://wa.me/243997007071" target="_blank" class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full text-center font-semibold bg-secondary text-white shadow-lg shadow-secondary/40 hover:opacity-90 transition">
+            Contacter sur WhatsApp
+          </a>
+          <a href="/fr/bienfaits" class="px-7 py-3 rounded-full text-center font-semibold border-2 border-secondary bg-white hover:bg-primary/40 transition">
+            Voir les bienfaits
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-11/12 md:w-3/4 py-16">
+      <h2 class="text-3xl md:text-5xl text-center font-semibold">Pourquoi Sante Plus se distingue</h2>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <article class="rounded-2xl border border-primary bg-white p-6 shadow-md hover:shadow-xl hover:shadow-secondary/20 transition">
+          <img src="/images/soursop-tea.jpg" alt="Tasse d'infusion" class="rounded-xl h-48 w-full object-cover animated-photo" />
+          <h3 class="text-2xl font-semibold mt-4">Conseils simples</h3>
+          <p class="mt-2 opacity-90">Des gestes concrets pour integrer le bien-etre naturel au quotidien.</p>
+        </article>
+        <article class="rounded-2xl border border-secondary bg-white p-6 shadow-md hover:shadow-xl hover:shadow-secondary/20 transition">
+          <img src="/images/shopping.webp" alt="Produits naturels bien-etre" class="rounded-xl h-48 w-full object-cover animated-photo" />
+          <h3 class="text-2xl font-semibold mt-4">Approche naturelle</h3>
+          <p class="mt-2 opacity-90">Routines autour des feuilles de corossol avec moderation et regularite.</p>
+        </article>
+        <article class="rounded-2xl border border-primary bg-white p-6 shadow-md hover:shadow-xl hover:shadow-secondary/20 transition">
+          <img src="/images/product.webp" alt="Produits naturels et plantes" class="rounded-xl h-48 w-full object-cover animated-photo" />
+          <h3 class="text-2xl font-semibold mt-4">Accompagnement humain</h3>
+          <p class="mt-2 opacity-90">Support direct sur WhatsApp pour repondre a vos questions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="w-11/12 md:w-3/4 pb-16">
+      <div class="rounded-3xl border border-secondary/70 bg-white/85 backdrop-blur-sm p-8 md:p-10 shadow-2xl shadow-secondary/20">
+        <h3 class="text-3xl md:text-4xl font-semibold text-center">Votre rituel glow quotidien</h3>
+        <p class="mt-4 text-center md:text-lg opacity-90">
+          Une routine feminine, simple et chic pour rester constante: hydrater, infuser, nourrir, respirer.
+        </p>
+        <div class="mt-8 grid md:grid-cols-4 gap-4">
+          <div class="rounded-2xl border border-primary/60 bg-primary/10 p-5">
+            <p class="text-sm uppercase tracking-wide font-semibold text-secondary">Etape 01</p>
+            <h4 class="mt-2 text-xl font-semibold">Energie du matin</h4>
+            <p class="mt-2 opacity-90">Infusion tiede + eau pure pour commencer la journee en douceur.</p>
+          </div>
+          <div class="rounded-2xl border border-primary/60 bg-primary/10 p-5">
+            <p class="text-sm uppercase tracking-wide font-semibold text-secondary">Etape 02</p>
+            <h4 class="mt-2 text-xl font-semibold">Equilibre de midi</h4>
+            <p class="mt-2 opacity-90">Associez fruits, legumes verts et respiration consciente pendant 10 minutes.</p>
+          </div>
+          <div class="rounded-2xl border border-primary/60 bg-primary/10 p-5">
+            <p class="text-sm uppercase tracking-wide font-semibold text-secondary">Etape 03</p>
+            <h4 class="mt-2 text-xl font-semibold">Reset du soir</h4>
+            <p class="mt-2 opacity-90">Une tasse plus legere, un moment calme et une routine de sommeil reguliere.</p>
+          </div>
+          <div class="rounded-2xl border border-primary/60 bg-primary/10 p-5">
+            <p class="text-sm uppercase tracking-wide font-semibold text-secondary">Etape 04</p>
+            <h4 class="mt-2 text-xl font-semibold">Suivi hebdomadaire</h4>
+            <p class="mt-2 opacity-90">Faites le point et recevez un accompagnement personnalise sur WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-11/12 md:w-3/4 pb-20">
+      <div class="rounded-3xl border border-secondary bg-gradient-to-r from-primary/60 via-white to-secondary/40 p-8 md:p-10">
+        <h3 class="text-3xl md:text-4xl font-semibold text-center">Commencez votre transformation bien-etre</h3>
+        <p class="mt-4 text-center md:text-lg opacity-90">
+          Apprenez a preparer votre infusion, structurer vos habitudes et rester reguliere avec un support humain.
+        </p>
+        <div class="mt-7 flex justify-center">
+          <a href="/fr/contact" class="px-8 py-3 rounded-full text-center font-semibold bg-secondary text-white shadow-lg shadow-secondary/40 hover:opacity-90 transition">
+            Recevoir un accompagnement
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-11/12 md:w-3/4 pb-24">
+      <h3 class="text-3xl md:text-4xl font-semibold text-center">Elles nous font confiance</h3>
+      <div class="mt-8 grid md:grid-cols-3 gap-5">
+        <article class="rounded-2xl border border-secondary/60 bg-white p-6 shadow-lg">
+          <p class="text-lg leading-relaxed">"J'adore le style de la plateforme. Les conseils sont clairs et faciles a appliquer."</p>
+          <p class="mt-4 text-sm font-semibold uppercase tracking-wide text-secondary">Mireille • Lubumbashi</p>
+        </article>
+        <article class="rounded-2xl border border-secondary/60 bg-white p-6 shadow-lg">
+          <p class="text-lg leading-relaxed">"Une ambiance feminine et premium, avec un vrai accompagnement quotidien."</p>
+          <p class="mt-4 text-sm font-semibold uppercase tracking-wide text-secondary">Esther • Kinshasa</p>
+        </article>
+        <article class="rounded-2xl border border-secondary/60 bg-white p-6 shadow-lg">
+          <p class="text-lg leading-relaxed">"Je me sens mieux organisee, plus constante, et surtout bien encadree."</p>
+          <p class="mt-4 text-sm font-semibold uppercase tracking-wide text-secondary">Ayanda • Johannesburg</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <Footer data={data.footerData} lang="fr" />
+</Layout>

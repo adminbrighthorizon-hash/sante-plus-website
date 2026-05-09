@@ -24,7 +24,7 @@ const ldJson = JSON.stringify(meta.ldJson);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={import.meta.env.SITE} />
-    <script type="application/ld+json" set:html={ldJson} />
+    <script is:inline type="application/ld+json" set:html={ldJson} />
   </head>
   <body class="bg-white">
     <Background />
@@ -44,5 +44,24 @@ const ldJson = JSON.stringify(meta.ldJson);
       Bitstream Vera Sans Mono,
       Courier New,
       monospace;
+  }
+
+  .animated-photo {
+    animation: kenburns 18s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  .animated-photo-slow {
+    animation: kenburns 24s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  @keyframes kenburns {
+    0% {
+      transform: scale(1) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: scale(1.08) translate3d(-1.4%, -1.2%, 0);
+    }
   }
 </style>
