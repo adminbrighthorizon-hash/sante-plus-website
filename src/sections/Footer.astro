@@ -34,53 +34,8 @@ const withBase = (path: string) =>
 
 <footer
   id="contact-section"
-  class="w-full border-t border-primary/60 bg-gradient-to-r from-primary via-white to-secondary px-4 py-10 text-black"
+  class="flex flex-col justify-center text-center gap-y-8 pt-10 pb-8 bg-gradient-to-r from-primary via-white to-secondary text-black w-full border-t border-primary/60"
 >
-<<<<<<< HEAD
-  <div class="mx-auto flex w-full max-w-5xl flex-col items-center gap-y-7 rounded-3xl border border-primary/30 bg-white/85 px-6 py-8 text-center shadow-xl shadow-secondary/15 backdrop-blur-sm">
-    <section>
-      <Action as="a" type="text" class="text-2xl font-semibold md:text-3xl" href={withBase(lang === "fr" ? "/fr/" : "/")}>
-      {data.logo}
-      </Action>
-    </section>
-    <section>
-      <p class="max-w-3xl text-base md:text-lg">
-        {footerDescription}
-      </p>
-    </section>
-    <section
-      class="flex flex-row flex-wrap justify-center gap-3 px-4 md:px-0"
-    >
-      {
-        linksByLang[lang].map((link) => (
-          <Action as="a" type="text" href={withBase(link.href)} class="rounded-full border border-primary/40 bg-white px-4 py-1.5 text-sm font-semibold shadow-sm transition hover:border-secondary hover:bg-primary/15 md:text-base">
-            {link.label}
-          </Action>
-        ))
-      }
-    </section>
-    <section class="mb-1 flex flex-row flex-wrap items-center justify-center gap-3">
-      {
-        data.socials.map((social) => (
-          <Action
-            as="a"
-            type="icon"
-            class:list={[
-              "inline-flex h-12 w-12 items-center justify-center rounded-full border-2 text-white shadow-md transition hover:scale-105 hover:opacity-100",
-              social.icon === "InstagramIcon"
-                ? "border-fuchsia-600 bg-gradient-to-r from-fuchsia-600 via-pink-600 to-orange-500"
-                : "border-green-700 bg-green-600",
-            ]}
-            href={social.href}
-            title={social.icon}
-          >
-            <Icon icon={social.icon as IconType} class="h-7 w-7" />
-          </Action>
-        ))
-      }
-    </section>
-  </div>
-=======
   <section>
     <Action as="a" type="text" class="text-xl md:text-2xl" href={withBase(lang === "fr" ? "/fr/" : "/")}>
       {data.logo}
@@ -117,5 +72,4 @@ const withBase = (path: string) =>
       ))
     }
   </section>
->>>>>>> publish/dev-sync
 </footer>
