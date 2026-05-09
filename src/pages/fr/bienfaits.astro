@@ -5,6 +5,7 @@ import Header from "@/sections/Header.astro";
 import { getLandingData } from "@/services/data.service";
 
 const data = await getLandingData();
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Layout meta={{ ...data.meta, lang: "fr", title: "Bienfaits des feuilles de corossol | Sante Plus", description: "Decouvrez des usages bien-etre responsables des feuilles de corossol avec Sante Plus." }}>
@@ -23,7 +24,7 @@ const data = await getLandingData();
         <p class="mt-3 opacity-90">Traditionnellement utilisees pour accompagner l'equilibre et la vitalite du corps.</p>
       </article>
       <article class="rounded-2xl border border-secondary/70 bg-white p-6 shadow-lg hover:shadow-2xl hover:shadow-secondary/20 transition">
-        <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80" alt="Feuilles de corossol" class="rounded-xl h-64 w-full object-cover animated-photo" />
+        <img src={`${baseUrl}images/soursop-tea.jpg`} alt="Infusion de corossol preparee pour une routine responsable" class="rounded-xl h-64 w-full object-cover animated-photo" />
         <h2 class="text-2xl font-semibold mt-5">Routine responsable</h2>
         <p class="mt-3 opacity-90">Toujours associer cette habitude a l'hydratation, une bonne alimentation et un avis medical.</p>
       </article>
