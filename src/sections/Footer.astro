@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { data, lang = "en" } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
 
 const linksByLang = {
   en: [
@@ -27,6 +28,8 @@ const footerDescription =
   lang === "fr"
     ? "La nature est mon medicament. Nous accompagnons Lubumbashi, Kolwezi, Kinshasa et Johannesburg avec des conseils bien-etre pratiques et responsables."
     : data.description;
+const withBase = (path: string) =>
+  path === "/" ? baseUrl : `${baseUrl}${path.replace(/^\/+/, "")}`;
 ---
 
 <footer
@@ -34,7 +37,7 @@ const footerDescription =
   class="flex flex-col justify-center text-center gap-y-8 pt-10 pb-8 bg-gradient-to-r from-primary via-white to-secondary text-black w-full border-t border-primary/60"
 >
   <section>
-    <Action as="a" type="text" class="text-xl md:text-2xl" href={lang === "fr" ? "/fr/" : "/"}>
+    <Action as="a" type="text" class="text-xl md:text-2xl" href={withBase(lang === "fr" ? "/fr/" : "/")}>
       {data.logo}
     </Action>
   </section>
@@ -48,7 +51,7 @@ const footerDescription =
   >
     {
       linksByLang[lang].map((link) => (
-        <Action as="a" type="text" href={link.href}>
+        <Action as="a" type="text" href={withBase(link.href)}>
           {link.label}
         </Action>
       ))

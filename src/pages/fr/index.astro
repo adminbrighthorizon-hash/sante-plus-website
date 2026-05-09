@@ -12,8 +12,17 @@ const baseUrl = import.meta.env.BASE_URL;
   <Header data={data.headerData} lang="fr" />
   <main class="flex flex-col items-center">
     <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-28">
-      <div class="absolute inset-0">
-        <img src={`${baseUrl}images/soursop-tree.jpg`} alt="Ingredients bien-etre naturels" class="w-full h-full object-cover animated-photo-slow" />
+      <div class="hero-bg-wrap" aria-hidden="true">
+        <div
+          class="hero-bg-layer hero-bg-layer-main"
+          style={`background-image: url('${baseUrl}images/soursop-tree.jpg');`}
+        ></div>
+        <div
+          class="hero-bg-layer hero-bg-layer-accent"
+          style={`background-image: url('${baseUrl}images/shopping.webp');`}
+        ></div>
+        <div class="hero-glow-orb one"></div>
+        <div class="hero-glow-orb two"></div>
         <div class="absolute inset-0 bg-gradient-to-br from-white/90 via-primary/70 to-secondary/45"></div>
       </div>
       <div class="relative z-10 w-11/12 md:w-3/4 rounded-3xl border-2 border-primary/80 bg-white/90 p-8 md:p-12 shadow-2xl shadow-secondary/30">
@@ -30,11 +39,22 @@ const baseUrl = import.meta.env.BASE_URL;
           Lubumbashi • Kolwezi • Kinshasa • Johannesburg
         </p>
         <div class="mt-8 flex flex-col md:flex-row gap-4 justify-center">
-          <a href="https://wa.me/243997007071" target="_blank" class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full text-center font-semibold bg-secondary text-white shadow-lg shadow-secondary/40 hover:opacity-90 transition">
+          <a href="https://wa.me/243997007071" target="_blank" class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full text-center font-semibold bg-green-600 text-white shadow-lg shadow-green-700/40 hover:bg-green-700 transition">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.06 0C5.55 0 .25 5.3.25 11.81c0 2.08.55 4.12 1.6 5.93L0 24l6.45-1.7a11.78 11.78 0 0 0 5.61 1.43h.01c6.51 0 11.81-5.3 11.81-11.81 0-3.15-1.23-6.11-3.36-8.44zM12.07 21.7h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.22-3.83 1 1.02-3.73-.24-.38a9.73 9.73 0 0 1-1.5-5.18c0-5.41 4.4-9.81 9.81-9.81 2.62 0 5.08 1.02 6.93 2.87a9.74 9.74 0 0 1 2.88 6.94c0 5.41-4.4 9.81-9.81 9.81z"></path></svg>
             Contacter sur WhatsApp
           </a>
-          <a href="/fr/bienfaits" class="px-7 py-3 rounded-full text-center font-semibold border-2 border-secondary bg-white hover:bg-primary/40 transition">
+          <a href={`${baseUrl}fr/bienfaits`} class="px-7 py-3 rounded-full text-center font-semibold border-2 border-secondary bg-white hover:bg-primary/40 transition">
             Voir les bienfaits
+          </a>
+        </div>
+        <div class="mt-4 flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://www.instagram.com/santeplus" target="_blank" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-center font-semibold text-white bg-gradient-to-r from-fuchsia-600 via-pink-600 to-orange-500 shadow-lg shadow-pink-600/35 hover:brightness-110 transition">
+            <span class="text-base leading-none">◎</span>
+            Instagram
+          </a>
+          <a href="https://www.tiktok.com/@santeplus" target="_blank" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-center font-semibold text-white bg-slate-900 shadow-lg shadow-slate-900/40 hover:bg-black transition">
+            <span class="text-base leading-none">♪</span>
+            TikTok
           </a>
         </div>
       </div>
@@ -99,7 +119,7 @@ const baseUrl = import.meta.env.BASE_URL;
           Apprenez a preparer votre infusion, structurer vos habitudes et rester reguliere avec un support humain.
         </p>
         <div class="mt-7 flex justify-center">
-          <a href="/fr/contact" class="px-8 py-3 rounded-full text-center font-semibold bg-secondary text-white shadow-lg shadow-secondary/40 hover:opacity-90 transition">
+          <a href={`${baseUrl}fr/contact`} class="px-8 py-3 rounded-full text-center font-semibold bg-secondary text-white shadow-lg shadow-secondary/40 hover:opacity-90 transition">
             Recevoir un accompagnement
           </a>
         </div>
