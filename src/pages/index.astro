@@ -8,14 +8,14 @@ const data = await getLandingData();
 ---
 
 <Layout meta={data.meta}>
-  <Header data={data.headerData} />
+  <Header data={data.headerData} lang="en" />
   <main class="flex flex-col items-center">
     <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-28">
       <div class="absolute inset-0">
         <img
           src="/images/soursop-tree.jpg"
           alt="Natural wellness ingredients"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover animated-photo-slow"
         />
         <div class="absolute inset-0 bg-gradient-to-br from-white/90 via-primary/70 to-secondary/45"></div>
       </div>
@@ -49,17 +49,17 @@ const data = await getLandingData();
       <h2 class="text-3xl md:text-5xl text-center font-semibold">Why Santé Plus Stands Out</h2>
       <div class="mt-10 grid md:grid-cols-3 gap-6">
         <article class="rounded-2xl border border-primary bg-white p-6 shadow-md hover:shadow-xl hover:shadow-secondary/20 transition">
-          <img src="/images/soursop-tea.jpg" alt="Herbal tea cup" class="rounded-xl h-48 w-full object-cover" />
+          <img src="/images/soursop-tea.jpg" alt="Herbal tea cup" class="rounded-xl h-48 w-full object-cover animated-photo" />
           <h3 class="text-2xl font-semibold mt-4">Simple Guidance</h3>
           <p class="mt-2 opacity-90">Straightforward tips that make natural wellness easy to apply daily.</p>
         </article>
         <article class="rounded-2xl border border-secondary bg-white p-6 shadow-md hover:shadow-xl hover:shadow-secondary/20 transition">
-          <img src="/images/shopping.webp" alt="Natural wellness products display" class="rounded-xl h-48 w-full object-cover" />
+          <img src="/images/shopping.webp" alt="Natural wellness products display" class="rounded-xl h-48 w-full object-cover animated-photo" />
           <h3 class="text-2xl font-semibold mt-4">Natural Focus</h3>
           <p class="mt-2 opacity-90">Soursop leaf routines centered on consistency, moderation, and wellbeing.</p>
         </article>
         <article class="rounded-2xl border border-primary bg-white p-6 shadow-md hover:shadow-xl hover:shadow-secondary/20 transition">
-          <img src="/images/product.webp" alt="Natural products and plants" class="rounded-xl h-48 w-full object-cover" />
+          <img src="/images/product.webp" alt="Natural products and plants" class="rounded-xl h-48 w-full object-cover animated-photo" />
           <h3 class="text-2xl font-semibold mt-4">Human Support</h3>
           <p class="mt-2 opacity-90">Direct WhatsApp support to answer your questions and build better habits.</p>
         </article>
@@ -96,5 +96,5 @@ const data = await getLandingData();
       </div>
     </section>
   </main>
-  <Footer data={data.footerData} />
+  <Footer data={data.footerData} lang="en" />
 </Layout>
