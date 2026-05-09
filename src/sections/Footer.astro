@@ -5,9 +5,28 @@ import type { FooterData, Icon as IconType } from "@/config/landing.interface";
 
 interface Props {
   data: FooterData;
+  lang?: "en" | "fr";
 }
 
-const { data } = Astro.props;
+const { data, lang = "en" } = Astro.props;
+
+const linksByLang = {
+  en: [
+    { label: "Home", href: "/" },
+    { label: "Benefits", href: "/bienfaits" },
+    { label: "Contact", href: "/contact" },
+  ],
+  fr: [
+    { label: "Accueil", href: "/fr/" },
+    { label: "Bienfaits", href: "/fr/bienfaits" },
+    { label: "Contact", href: "/fr/contact" },
+  ],
+} as const;
+
+const footerDescription =
+  lang === "fr"
+    ? "La nature est mon medicament. Nous accompagnons Lubumbashi, Kolwezi, Kinshasa et Johannesburg avec des conseils bien-etre pratiques et responsables."
+    : data.description;
 ---
 
 <footer
@@ -15,20 +34,20 @@ const { data } = Astro.props;
   class="flex flex-col justify-center text-center gap-y-8 pt-10 pb-8 bg-gradient-to-r from-primary via-white to-secondary text-black w-full border-t border-primary/60"
 >
   <section>
-    <Action as="a" type="text" class="text-xl md:text-2xl" href="/">
+    <Action as="a" type="text" class="text-xl md:text-2xl" href={lang === "fr" ? "/fr/" : "/"}>
       {data.logo}
     </Action>
   </section>
   <section>
     <p class="md:text-lg">
-      {data.description}
+      {footerDescription}
     </p>
   </section>
   <section
     class="flex flex-row flex-wrap justify-center gap-x-3 px-4 md:px-0 md:text-xl"
   >
     {
-      data.links.map((link) => (
+      linksByLang[lang].map((link) => (
         <Action as="a" type="text" href={link.href}>
           {link.label}
         </Action>
