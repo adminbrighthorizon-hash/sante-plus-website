@@ -124,6 +124,18 @@ const baseUrl = import.meta.env.BASE_URL;
     line-height: 1;
   }
 
+  @media (max-width: 640px) {
+    .whatsapp-float {
+      right: 0.75rem;
+      bottom: 0.75rem;
+      padding: 0.45rem;
+    }
+
+    .whatsapp-float span {
+      display: none;
+    }
+  }
+
   @keyframes pulse-whatsapp {
     0%,
     100% {
