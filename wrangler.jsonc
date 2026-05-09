@@ -1,5 +1,10 @@
 {
   "name": "sante-plus-website",
   "compatibility_date": "2026-05-09",
-  "pages_build_output_dir": "./dist"
+  "workers_dev": true,
+  "main": "worker.js",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  }
 }
